@@ -1,6 +1,6 @@
-package com.server.Server.responce;
+package com.server.responce;
 
-import com.server.Server.entity.BookEntity;
+import com.server.entity.BookEntity;
 import lombok.Data;
 
 @Data

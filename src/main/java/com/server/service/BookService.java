@@ -1,9 +1,9 @@
-package com.server.Server.service;
+package com.server.service;
 
-import com.server.Server.entity.BookEntity;
-import com.server.Server.exception.ValidationException;
-import com.server.Server.repo.BookRepo;
-import com.server.Server.utils.ValidationBook;
+import com.server.entity.BookEntity;
+import com.server.exception.ValidationException;
+import com.server.repo.BookRepo;
+import com.server.utils.ValidationBook;
 import org.springframework.stereotype.Service;
 
 @Service

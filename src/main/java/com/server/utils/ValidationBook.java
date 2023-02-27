@@ -1,7 +1,7 @@
-package com.server.Server.utils;
+package com.server.utils;
 
-import com.server.Server.entity.BookEntity;
-import com.server.Server.exception.ValidationException;
+import com.server.entity.BookEntity;
+import com.server.exception.ValidationException;
 
 public class ValidationBook {
     public static void validationBook(BookEntity book) throws ValidationException {

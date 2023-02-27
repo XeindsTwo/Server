@@ -1,6 +1,6 @@
-package com.server.Server.repo;
+package com.server.repo;
 
-import com.server.Server.entity.BookEntity;
+import com.server.entity.BookEntity;
 import org.springframework.data.repository.CrudRepository;
 
 public interface BookRepo extends CrudRepository<BookEntity, Long> {

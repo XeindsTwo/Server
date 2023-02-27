@@ -1,4 +1,4 @@
-package com.server.Server.responce;
+package com.server.responce;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

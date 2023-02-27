@@ -1,10 +1,10 @@
-package com.server.Server.controller;
+package com.server.controller;
 
-import com.server.Server.entity.BookEntity;
-import com.server.Server.responce.BaseResponse;
-import com.server.Server.responce.BookListResponse;
-import com.server.Server.responce.BookResponse;
-import com.server.Server.service.BookService;
+import com.server.entity.BookEntity;
+import com.server.responce.BaseResponse;
+import com.server.responce.BookListResponse;
+import com.server.responce.BookResponse;
+import com.server.service.BookService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
