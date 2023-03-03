@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
@@ -16,10 +18,16 @@ public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private AuthorEntity author;
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "publishing_id")
+    private PublishingEntity publishing;
+    @NotBlank
     private String title;
-    private String author;
     private String typeBook;
-    private String publishing;
     private String year;
 }

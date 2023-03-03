@@ -5,13 +5,14 @@ import com.server.responce.BaseResponse;
 import com.server.responce.BookListResponse;
 import com.server.responce.BookResponse;
 import com.server.service.BookService;
+import com.server.utils.ValidationBookUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/book")
 public class BookController {
-    private BookService service;
+    private final BookService service;
 
     public BookController(BookService service) {
         this.service = service;
@@ -23,12 +24,13 @@ public class BookController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<BookResponse> registration(@RequestBody BookEntity data) {
+    public ResponseEntity<BaseResponse> registration(@RequestBody BookEntity data) {
         try {
-            BookEntity tempBook = service.save(data);
-            return ResponseEntity.ok(new BookResponse(true, "Книга добавлена", tempBook));
+            ValidationBookUtils.validationBook(data);
+            service.save(data);
+            return ResponseEntity.ok(new BaseResponse(true, "Книга добавлена"));
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body(new BookResponse(false, e.getMessage(), null));
+            return ResponseEntity.badRequest().body(new BaseResponse(false, e.getMessage()));
         }
     }
 

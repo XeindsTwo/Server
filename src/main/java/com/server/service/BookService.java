@@ -1,9 +1,11 @@
 package com.server.service;
 
 import com.server.entity.BookEntity;
-import com.server.exception.ValidationException;
+import com.server.exception.ValidationExceptionAuthor;
+import com.server.exception.ValidationExceptionBook;
+import com.server.exception.ValidationExceptionPublishing;
 import com.server.repo.BookRepo;
-import com.server.utils.ValidationBook;
+import com.server.utils.ValidationBookUtils;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,8 +16,12 @@ public class BookService {
         this.repo = repo;
     }
 
-    public BookEntity save(BookEntity book) throws ValidationException {
-        ValidationBook.validationBook(book);
+    public BookEntity save(BookEntity book) {
+        try {
+            ValidationBookUtils.validationBook(book);
+        } catch (ValidationExceptionPublishing | ValidationExceptionBook | ValidationExceptionAuthor e) {
+            e.printStackTrace();
+        }
         return repo.save(book);
     }
 
@@ -23,7 +29,7 @@ public class BookService {
         repo.deleteById(id);
     }
 
-    public Iterable<BookEntity> getAll(){
+    public Iterable<BookEntity> getAll() {
         return repo.findAll();
     }
 }
