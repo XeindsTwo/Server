@@ -15,7 +15,7 @@ public class PublishingEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
-    private String publishingName;
+    private String name;
     private String city;
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "publishing")

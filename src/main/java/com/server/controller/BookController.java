@@ -3,7 +3,6 @@ package com.server.controller;
 import com.server.entity.BookEntity;
 import com.server.responce.BaseResponse;
 import com.server.responce.BookListResponse;
-import com.server.responce.BookResponse;
 import com.server.service.BookService;
 import com.server.utils.ValidationBookUtils;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +20,11 @@ public class BookController {
     @GetMapping("/all")
     public ResponseEntity<BaseResponse> getAll() {
         return ResponseEntity.ok(new BookListResponse(service.getAll()));
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<BaseResponse> getPublisher(@RequestParam String name, @RequestParam String city) {
+        return ResponseEntity.ok(new BookListResponse(service.getPublishing(name, city)));
     }
 
     @PostMapping("/add")
