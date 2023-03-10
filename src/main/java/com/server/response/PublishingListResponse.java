@@ -1,4 +1,4 @@
-package com.server.responce;
+package com.server.response;
 
 import com.server.entity.PublishingEntity;
 import lombok.Data;

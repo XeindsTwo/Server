@@ -1,9 +1,9 @@
 package com.server.controller;
 
 import com.server.entity.AuthorEntity;
-import com.server.responce.AuthorListResponse;
-import com.server.responce.AuthorResponse;
-import com.server.responce.BaseResponse;
+import com.server.response.AuthorListResponse;
+import com.server.response.AuthorResponse;
+import com.server.response.BaseResponse;
 import com.server.service.AuthorService;
 import com.server.utils.ValidationAuthorUtils;
 import org.springframework.http.ResponseEntity;

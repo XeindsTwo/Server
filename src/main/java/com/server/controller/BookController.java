@@ -1,8 +1,8 @@
 package com.server.controller;
 
 import com.server.entity.BookEntity;
-import com.server.responce.BaseResponse;
-import com.server.responce.BookListResponse;
+import com.server.response.BaseResponse;
+import com.server.response.BookListResponse;
 import com.server.service.BookService;
 import com.server.utils.ValidationBookUtils;
 import org.springframework.http.ResponseEntity;

@@ -1,9 +1,9 @@
 package com.server.controller;
 
 import com.server.entity.PublishingEntity;
-import com.server.responce.BaseResponse;
-import com.server.responce.PublishingListResponse;
-import com.server.responce.PublishingResponse;
+import com.server.response.BaseResponse;
+import com.server.response.PublishingListResponse;
+import com.server.response.PublishingResponse;
 import com.server.service.PublishingService;
 import com.server.utils.ValidationPublishingUtils;
 import org.springframework.http.ResponseEntity;
